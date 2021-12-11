@@ -1,1 +1,1 @@
-"# LaTeX-Submodule" 
+# LaTeX-Submodule
