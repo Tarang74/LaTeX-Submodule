@@ -8,20 +8,18 @@ To add this submodule to your LaTeX project, use the following command:
 ```shell
 git submodule add https://github.com/Tarang74/LaTeX-Submodule
 ```
-## Linking the ignore file
-The provided `.gitignore` file can be accessed using a symbolic link.
+## Copying the ignore file
+Use the following commands if you want to use the provided `.ignore` file.
 ### Linux & macOS:
 ```bash
-ln -s submodule\.gitignore submodule.gitignore
+cp LaTeX-Submodule/.gitignore .gitignore
 ```
-### Windows (requires Admin):
+### Windows:
 ```batch
-mklink submodule.gitignore submodule\.gitignore
+copy LaTeX-Submodule/.gitignore .gitignore
 ```
-**Note:** *to allow you to add your own ignore patterns, the ignore file is named `submodule.gitignore`.*
 ## Using the styles
-To utilise the styles in `template.sty`, place the following command in the preamble of your document.
+To use the definitions in `template.sty`, place the following command in the preamble of your document.
 ```latex
-\usepackage{template}
+\usepackage{LaTeX-Submodule/template}
 ```
-As TeX searches for files within subdirectories, we do not need to specify the subfolder.
