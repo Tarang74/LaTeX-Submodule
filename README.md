@@ -16,7 +16,7 @@ cp LaTeX-Submodule/.gitignore .gitignore
 ```
 ### Windows:
 ```batch
-copy LaTeX-Submodule/.gitignore .gitignore
+copy LaTeX-Submodule\.gitignore .gitignore
 ```
 ## Using the styles
 To use the definitions in `template.sty`, place the following command in the preamble of your document.
