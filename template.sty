@@ -1,4 +1,4 @@
-%%% Packages
+% Packages
 
 %% Math enhancements
 
@@ -35,6 +35,7 @@
 \usepackage{float} % Float objects such as figures and tables
 \usepackage{geometry} % Page layout customisation
 \usepackage{marginnote} % Add text in margins
+\usepackage{mdframed} % Create nice frames
 
 %% Text enhancements
 
@@ -69,16 +70,31 @@
 \setmathfont[range={\mathcal, \mathbfcal}, StylisticSet=1]{XITS Math}
 \setmathfont[range={"2205}]{XITS Math}
 
-%%% Preamble 
+% Preamble 
 
 %% Misc Commands
+
+%%% Number Sets
+
+\newcommand*{\N}{\mathbb{N}}
+\newcommand*{\Z}{\mathbb{Z}}
+\newcommand*{\Q}{\mathbb{Q}}
+\newcommand*{\I}{\mathbb{I}}
+\newcommand*{\R}{\mathbb{R}}
+\newcommand*{\C}{\mathbb{C}}
+
+%%% Euler's E
 
 \newcommand{\e}{e}
 \let\exp\relax
 \DeclareMathOperator{\exp}{exp}
 
+%%% Empty set character
+
 \let\varnothing\relax
 \newcommand{\varnothing}{\char"2205}
+
+%%% Lines for matrices
 
 \newcommand*{\vertbar}{\rule[-1ex]{0.5pt}{2.5ex}}
 \newcommand*{\horzbar}{\rule[.5ex]{2.5ex}{0.5pt}}
@@ -133,15 +149,17 @@
 \newcommand{\nullspace}[1]{\mathcal{N}\left(\symbfit{#1}\right)}
 \newcommand{\leftnullspace}[1]{\mathcal{N}\left(\symbfit{#1}^{\top}\right)}
 
-%% Laplace Transform
+%% Integral Transforms
+
+%%% Laplace Transform
 
 \newcommand{\laplace}[1]{\char"2112 \left\{{#1}\right\}}
 
-%% Fourier Transform
+%%% Fourier Transform
 
 \newcommand{\fourier}[1]{\char"2131 \left\{{#1}\right\}}
 
-%% Theorems
+% Theorems
 
 \theoremstyle{definition}
 \newtheorem{definition}{Definition}[subsection]
@@ -157,3 +175,20 @@
 \newenvironment{solutionF}[1][Solution]{\proof[#1]\mbox{}}{\endproof}
 
 \newenvironment{proofcase}[1]{\proof[Case #1]\mbox{}}{\endproof}
+
+%% Frame styles
+\mdfsetup{skipabove=\topskip,skipbelow=\topskip}
+\mdfdefinestyle{exampledefault}{%
+	rightline=true,
+	innerleftmargin=10,innerrightmargin=10,
+	leftmargin=20,rightmargin=20,
+	topline=false,bottomline=false,
+	frametitlefont=\bf\large
+}
+\mdfdefinestyle{exampledefaultcols}{%
+	rightline=false,leftline=true,
+	innerleftmargin=5,innerrightmargin=5,
+	leftmargin=0,rightmargin=0,
+	topline=false,bottomline=false,
+	frametitlefont=\bf\large
+}
