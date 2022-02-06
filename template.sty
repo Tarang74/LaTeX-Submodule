@@ -1,36 +1,30 @@
 % Packages
 
 %% Math enhancements
-
 \usepackage{amsmath} % Misc enhancements to math equations
 \usepackage{cancel} % Draw diagonal lines and arrows in math equations
 \usepackage{mathtools} % Starred versions of amsmath matrix environments; Multiline, cases, gathered environment
+\usepackage{chngcntr} % Reset counter within sections
 
 %% Sybmols 
-
 \usepackage{amssymb} % Extended symbol collection - also loads amsfonts
 \usepackage{stmaryrd} % Extra symbols
 
 %% Fonts
-
 \usepackage{mathrsfs} % Support \mathcal and \mathscr
 \usepackage{steinmetz} % Electronics notation
 
 %% Environments 
-
 \usepackage{amsthm} % Use theorems
 
 %% Tables and arrays
-
 \usepackage{booktabs} % Top and bottom rule for tabular
 \usepackage{tabularx} % Advanced Tables
 
 %% Lists
-
 \usepackage{enumitem} % Itemize, enumerate, description environments
 
 %% Page layout
-
 \usepackage{fancyhdr} % Page headers and footers
 \usepackage{float} % Float objects such as figures and tables
 \usepackage{geometry} % Page layout customisation
@@ -38,22 +32,18 @@
 \usepackage{mdframed} % Create nice frames
 
 %% Text enhancements
-
 \usepackage[none]{hyphenat} % Disable hyphenation of long text
 \usepackage{ragged2e} % Text alignment options
 
 %% Referencing
-
 \usepackage{tocbibind} % Adds bibliography to the Table of Contents
 \usepackage{url} % Define urls
 
 %% Graphics
-
 \usepackage{graphicx} % Extension to graphics 
 \graphicspath{ {./figures/} }
 
 %% Miscellaneous
-
 \usepackage{listings} % Typeset programming code 
 \usepackage{siunitx} % SI units package
 \usepackage{physics} % Vectors/derivatives/operators
@@ -63,7 +53,6 @@
 \usepackage{bookmark} % New bookmark organisation for hyperref
 
 %% Unicode setup
-
 \usepackage[warnings-off={mathtools-colon, mathtools-overbracket}]{unicode-math}
 \setmathfont{Latin Modern Math}
 \setmathfont[range={bb, bbit}, Scale=MatchUppercase]{TeX Gyre Pagella Math}
@@ -75,7 +64,6 @@
 %% Misc Commands
 
 %%% Number Sets
-
 \newcommand*{\N}{\mathbb{N}}
 \newcommand*{\Z}{\mathbb{Z}}
 \newcommand*{\Q}{\mathbb{Q}}
@@ -84,29 +72,34 @@
 \newcommand*{\C}{\mathbb{C}}
 
 %%% Euler's E
-
 \newcommand{\e}{e}
 \let\exp\relax
 \DeclareMathOperator{\exp}{exp}
 
 %%% Empty set character
-
+\let\oldemptyset\emptyset
 \let\varnothing\relax
 \newcommand{\varnothing}{\char"2205}
 
-%%% Lines for matrices
+%%% Contradiction
+\newcommand{\contradiction}{
+    \hspace{-1em}
+	{\hbox{
+	\setbox0=\hbox{$\mkern-3mu{\times}\mkern-3mu$}
+	\setbox1=\hbox to0pt{\hss\copy0\hss}
+	\copy0\raisebox{0.5\wd0}{\copy1}\raisebox{-0.5\wd0}{\box1}\box0}}
+}
 
+%%% Lines for matrices
 \newcommand*{\vertbar}{\rule[-1ex]{0.5pt}{2.5ex}}
 \newcommand*{\horzbar}{\rule[.5ex]{2.5ex}{0.5pt}}
 
 %% Paired Delimiters
-
 \DeclarePairedDelimiter\ceil{\lceil}{\rceil}
 \DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
 \DeclarePairedDelimiter\avec{\langle}{\rangle}
 
 %% Probability Functions
-
 \let\Pr\relax
 \DeclareMathOperator{\Pr}{Pr}
 \DeclareMathOperator{\E}{E}
@@ -115,7 +108,6 @@
 \DeclareMathOperator{\Corr}{Corr}
 
 %% Hyperbolic Functions
-
 \DeclareMathOperator{\arcsinh}{arcsinh}
 \DeclareMathOperator{\arccosh}{arccosh}
 \DeclareMathOperator{\arctanh}{arctanh}
@@ -124,7 +116,6 @@
 \DeclareMathOperator{\arccsch}{arccsch}
 
 %% Linear Algebra
-
 \let\det\relax
 \DeclareMathOperator{\det}{det}
 \let\tr\relax
@@ -152,15 +143,12 @@
 %% Integral Transforms
 
 %%% Laplace Transform
-
 \newcommand{\laplace}[1]{\char"2112 \left\{{#1}\right\}}
 
 %%% Fourier Transform
-
 \newcommand{\fourier}[1]{\char"2131 \left\{{#1}\right\}}
 
 % Theorems
-
 \theoremstyle{definition}
 \newtheorem{definition}{Definition}[subsection]
 
@@ -169,7 +157,12 @@
 \newtheorem{corollary}{Corollary}[theorem]
 
 \newtheorem{axiom}{Axiom}
+
 \newtheorem{remark}{Remark}
+\newtheorem{note}{Note}[section]
+\numberwithin{note}{subsection}
+
+\newtheorem*{statement}{Statement}
 
 \newenvironment{solution}[1][Solution]{\proof[#1]\mbox{}\\*}{\endproof}
 \newenvironment{solutionF}[1][Solution]{\proof[#1]\mbox{}}{\endproof}
@@ -192,3 +185,13 @@
 	topline=false,bottomline=false,
 	frametitlefont=\bf\large
 }
+
+%% Reset counter within subsections
+\counterwithin*{equation}{section}
+\counterwithin*{equation}{subsection}
+\counterwithin*{remark}{subsection}
+
+%% Page layout setup
+\pagestyle{fancy}
+\setlength\headheight{24pt}
+% \setlength\parindent{0pt} % Indent first line in new paragraphs
