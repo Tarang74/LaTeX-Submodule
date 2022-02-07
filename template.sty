@@ -27,7 +27,7 @@
 \usepackage{geometry} % Page layout customisation
 \usepackage{fancyhdr} % Page headers and footers
 \usepackage{float} % Float objects such as figures and tables
-\usepackage{mdframed} % Create nice frames
+\usepackage{tcolorbox} % Create boxed environments
 
 %% Text enhancements
 \usepackage[none]{hyphenat} % Disable hyphenation of long text
@@ -166,21 +166,33 @@
 
 \newenvironment{proofcase}[1]{\proof[Case #1]\mbox{}}{\endproof}
 
-%% Frame styles
-\mdfsetup{skipabove=\topskip,skipbelow=\topskip}
-\mdfdefinestyle{exampledefault}{%
-	rightline=true,
-	innerleftmargin=10,innerrightmargin=10,
-	leftmargin=20,rightmargin=20,
-	topline=false,bottomline=false,
-	frametitlefont=\bf\large
+%% Box styles
+\tcbuselibrary{skins}
+\newtcolorbox{tcolorboxlarge}[1][]{
+    skin=enhanced,
+    boxrule=0pt,
+    frame hidden,
+    sharp corners,
+    borderline west={0.5pt}{0pt}{black},
+    borderline east={0.5pt}{0pt}{black},
+    enlarge left by=10pt,
+    width=\linewidth-20pt,
+    opacityback=0,
+    coltitle=black,
+    fonttitle=\large\bfseries,
+    #1
 }
-\mdfdefinestyle{exampledefaultcols}{%
-	rightline=false,leftline=true,
-	innerleftmargin=5,innerrightmargin=5,
-	leftmargin=0,rightmargin=0,
-	topline=false,bottomline=false,
-	frametitlefont=\bf\large
+
+\newtcolorbox{tcolorboxcols}[1][]{
+    skin=enhanced,
+    boxrule=0pt,
+    frame hidden,
+    sharp corners,
+    borderline west={0.5pt}{0pt}{black},
+    opacityback=0,
+    coltitle=black,
+    fonttitle=\large\bfseries,
+    #1
 }
 
 %% Reset counter within subsections
