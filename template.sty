@@ -152,18 +152,17 @@
 
 % Theorems
 \theoremstyle{definition}
-\newtheorem{definition}{Definition}[subsection]
+\newtheorem{definition}{Definition}[section]
 
 \theoremstyle{plain}
-\newtheorem{theorem}{Theorem}[subsection]
+\newtheorem{theorem}{Theorem}[section]
 \newtheorem{corollary}{Corollary}[theorem]
-\newtheorem{lemma}{Lemma}[theorem]
+\newtheorem{lemma}[theorem]{Lemma}
 \newtheorem{axiom}{Axiom}
 
 \theoremstyle{remark}
 \newtheorem{remark}{Remark}
 \newtheorem{note}{Note}[section]
-\numberwithin{note}{subsection}
 \newtheorem*{statement}{Statement}
 
 \newenvironment{solution}[1][Solution]{\proof[#1]\mbox{}\\*}{\endproof}
