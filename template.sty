@@ -116,6 +116,15 @@
 \DeclareMathOperator{\arccsch}{arccsch}
 
 %% Linear Algebra
+%%% Augmented matrices
+\makeatletter
+\renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
+  \hskip -\arraycolsep
+  \let\@ifnextchar\new@ifnextchar
+  \array{#1}}
+\makeatother
+
+%%% Operators
 \let\det\relax
 \DeclareMathOperator{\det}{det}
 \let\Tr\relax
