@@ -133,8 +133,8 @@ SET /A numP=0
 :help
     ECHO %scriptname% compile tikz diagrams using XeLaTeX.
     ECHO.
-    ECHO     Usage: %scriptname% file [directory] [filename] [option] ...
-    ECHO            %scriptname% recursive [directory] [option] ...
+    ECHO     Usage: %scriptname% file [directory] [filename] [options]
+    ECHO            %scriptname% recursive [directory] [options]
     ECHO.
     ECHO Available options:
     ECHO     %scriptname% [-h ^| -help]                  Provides help information.
