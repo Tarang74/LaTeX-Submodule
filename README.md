@@ -9,7 +9,10 @@ Set up your LaTeX projects quickly using GitHub submodules!
 To add this submodule to your LaTeX project, use the following command:
 
 ```shell
+# HTML
 git submodule add https://github.com/Tarang74/LaTeX-Submodule
+# SSH
+git submodule add git@github.com:Tarang74/LaTeX-Submodule.git
 ```
 
 ## Initialising the submodule
@@ -43,4 +46,21 @@ To use the definitions in `template.sty`, place the following command in the pre
 
 ```latex
 \usepackage{LaTeX-Submodule/template}
+```
+
+## Using the make_figures batch script
+
+`make_figures.bat` is designed to compile multiple `.tikz` files from the root directory of the program.
+The figures are compiled to PDFs and are stored in `./figures`.
+
+To compile a single file, use:
+
+```shell
+make_figures file [directory] [filename] [options]
+```
+
+To compile all `.tikz` files in a directory use:
+
+```shell
+make_figures recursive [directory] [options]
 ```
