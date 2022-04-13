@@ -177,8 +177,10 @@
 \newtheorem{note}{Note}[subsection]
 \newtheorem*{statement}{Statement}
 
-\newenvironment{solution}[1][Solution]{\proof[#1]\mbox{}\\*}{\endproof}
-\newenvironment{solutionF}[1][Solution]{\proof[#1]\mbox{}}{\endproof}
+\newenvironment{examples}[1][Examples]{\let\qed\relax\proof[#1]\mbox{}\\*}{\endproof}
+\newenvironment{question}[1][Question]{\let\qed\relax\proof[#1]\mbox{}\\*}{\endproof}
+\newenvironment{solution}[1][Solution]{\let\qed\relax\proof[#1]\mbox{}\\*}{\endproof}
+\newenvironment{solutionF}[1][Solution]{\let\qed\relax\proof[#1]\mbox{}}{\endproof}
 
 \newenvironment{proofcase}[1]{\proof[Case #1]\mbox{}}{\endproof}
 
