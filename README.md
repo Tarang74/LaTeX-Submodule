@@ -42,7 +42,7 @@ copy LaTeX-Submodule\.gitignore .gitignore
 
 ## Using the styles
 
-To use the definitions in `template.sty`, place the following command in the preamble of your document.
+To use the definitions in `template.tex`, place the following command in the preamble of your document.
 
 ```latex
 \input{./LaTeX-Submodule/template.tex}
