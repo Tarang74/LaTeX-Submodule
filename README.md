@@ -45,7 +45,7 @@ copy LaTeX-Submodule\.gitignore .gitignore
 To use the definitions in `template.sty`, place the following command in the preamble of your document.
 
 ```latex
-\usepackage{LaTeX-Submodule/template}
+\input{./LaTeX-Submodule/template.tex}
 ```
 
 ## Using the make_figures batch script
