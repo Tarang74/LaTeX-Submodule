@@ -10,7 +10,7 @@
     soft open fences
 }
 
-%% Sybmols 
+%% Symbols 
 \usepackage{amssymb} % Extended symbol collection - also loads amsfonts
 \usepackage{stmaryrd} % Extra symbols
 
@@ -109,6 +109,8 @@
 \DeclareMathOperator{\Cov}{Cov}
 \DeclareMathOperator{\Corr}{Corr}
 
+\newcommand{\Perm}[2]{\prescript{#1}{}{P}_{#2}}
+
 %% Hyperbolic Functions
 \DeclareMathOperator{\arcsinh}{arcsinh}
 \DeclareMathOperator{\arccosh}{arccosh}
@@ -152,18 +154,8 @@
 \newcommand{\nullspace}[1]{\mathcal{N}\left(\symbf{#1}\right)}
 \newcommand{\leftnullspace}[1]{\mathcal{N}\left(\symbf{#1}^{\top}\right)}
 
-\newcommand{\Perm}[2]{\prescript{#1}{}{P}_{#2}}
+%% Additional operators
 \DeclareMathOperator{\erf}{erf}
-
-%% Integral Transforms
-
-%%% Laplace Transform
-\newcommand{\laplace}[1]{\char"2112 \left\{{#1}\right\}} % chktex 18
-\newcommand{\invlaplace}[1]{\char"2112^{-1} \left\{{#1}\right\}} % chktex 18
-
-%%% Fourier Transform
-\newcommand{\fourier}[1]{\char"2131 \left\{{#1}\right\}} % chktex 18
-\newcommand{\invfourier}[1]{\char"2131^{-1} \left\{{#1}\right\}} % chktex 18
 
 % Theorems
 \theoremstyle{definition}
@@ -183,7 +175,6 @@
 \newenvironment{examples}[1][Examples]{\let\qed\relax\proof[#1]\mbox{}\\*}{\endproof}
 \newenvironment{question}[1][Question]{\let\qed\relax\proof[#1]\mbox{}\\*}{\endproof}
 \newenvironment{solution}[1][Solution]{\let\qed\relax\proof[#1]\mbox{}\\*}{\endproof}
-\newenvironment{solutionF}[1][Solution]{\let\qed\relax\proof[#1]\mbox{}}{\endproof}
 
 \newenvironment{proofcase}[1]{\proof[Case #1]\mbox{}}{\endproof}
 
