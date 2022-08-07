@@ -10,14 +10,14 @@
     soft open fences
 }
 
-%% Symbols 
+%% Symbols
 \usepackage{amssymb} % Extended symbol collection - also loads amsfonts
 \usepackage{stmaryrd} % Extra symbols
 
 %% Fonts
 \usepackage{mathrsfs} % Support \mathcal and \mathscr
 
-%% Environments 
+%% Environments
 \usepackage{amsthm} % Use theorems
 
 %% Tables and arrays
@@ -42,14 +42,11 @@
 \usepackage{url} % Define urls
 
 %% Graphics
-\usepackage{graphicx} % Extension to graphics 
+\usepackage{graphicx} % Extension to graphics
 % \graphicspath{ {./figures/} }
 
 %% Miscellaneous
-\usepackage{listings} % Typeset programming code
-\lstset{
-    basicstyle = \ttfamily, columns = fullflexible, keepspaces = true
-} 
+\usepackage[outputdir=Debug]{minted} % Typeset programming code
 \usepackage{siunitx} % SI units package
 \usepackage{derivative} % Derivative notation
 \usepackage{pdfpages} % Import PDFs into document
@@ -65,7 +62,7 @@
 \setmathfont[range={\mathscr}]{XITS Math}
 \setmathfont[range={"2205}]{XITS Math} % chktex 18
 
-% Preamble 
+% Preamble
 
 %% Misc Commands
 
